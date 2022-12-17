@@ -24,7 +24,7 @@ I think that a greater gain can be obtained by applying the components proposed 
 --------------------------------------
 # Implementation
 
-## Pretraining
+**Pretraining**
 
 The dataset used for pretraining is tinyimagenet200.
 
@@ -72,7 +72,7 @@ command:
 python -m torch.distributed.launch --nproc_per_node=8 main_dino_hier.py --arch vit_small --data_path /path/to/tinyimagenet/train --output_dir /path/to/saving_dir
 ```
 
-## Linear evaluation
+**Linear evaluation**
 
 I use several fine-grained classification benchmarks to evaluate the learned representation with each method.
 
