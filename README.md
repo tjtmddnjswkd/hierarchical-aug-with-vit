@@ -1,6 +1,70 @@
 ## DL2_project - Applying Hierarchical Augmentation to the DINO Method Using the ViT Model
 This is a repository that implements [DINO](https://github.com/facebookresearch/dino) to apply for ViT the [paper](https://arxiv.org/abs/2206.00227)'s components which can be applied only CNN-based model.
 
+## Pretraining
+
+1. SimSiam
+
+path: /simsiam/
+command: 
+
+```
+python main_simsiam.py \
+  -a resnet34 \
+  --dist-url 'tcp://localhost:10001' --multiprocessing-distributed --world-size 1 --rank 0 \
+  --fix-pred-lr \
+  --data /path/to/tinyimagenet/
+```
+
+2. SimSiam+Hier
+
+path: /simsiam+hier/
+command: 
+
+```
+python main_train.py \
+  -a resnet34 \
+  --dist-url 'tcp://localhost:10001' --multiprocessing-distributed --world-size 1 --rank 0 \
+  --fix-pred-lr \
+  --data /path/to/tinyimagenet
+```
+
+3. DINO
+
+path: /dino/
+command: 
+
+```
+python -m torch.distributed.launch --nproc_per_node=8 main_dino.py --arch vit_small --data_path /path/to/tinyimagenet/train --output_dir /path/to/saving_dir
+```
+
+4. DINO+Hier
+
+path: /dino/
+command: 
+
+```
+python -m torch.distributed.launch --nproc_per_node=8 main_dino_hier.py --arch vit_small --data_path /path/to/tinyimagenet/train --output_dir /path/to/saving_dir
+```
+
+## Linear evaluation
+
+1. Simsiam, Simsiam+Hier
+
+command:
+
+```
+python main_lincls.py -a resnet34 --dist-url 'tcp://localhost:10255' --multiprocessing-distributed --world-size 1 --rank 0 --pretrained /path/to/checkpoint --dataset [imagenet, cub, car, or flower]
+```
+
+2. DINO, DINO+Hier
+
+command:
+
+```
+python -m torch.distributed.launch --nproc_per_node=2 eval_linear.py --dataset [imagenet, cub, car, or flower] --num_labels [200, 200, 196, or 102] --pretrained_weights /path/to/checkpoint
+```
+
 ## Results
 ### Top-1 Acc.
 <table>
@@ -80,52 +144,3 @@ This is a repository that implements [DINO](https://github.com/facebookresearch/
     <td>87.67</td>
   </tr>
 </table>
-
-## Pretraining
-
-1. SimSiam
-
-path: /simsiam/
-command: 
-
-```
-python main_simsiam.py \
-  -a resnet34 \
-  --dist-url 'tcp://localhost:10001' --multiprocessing-distributed --world-size 1 --rank 0 \
-  --fix-pred-lr \
-  --data /path/to/tinyimagenet/
-```
-
-2. SimSiam+Hier
-
-path: /simsiam+hier/
-command: 
-
-```
-python main_train.py \
-  -a resnet34 \
-  --dist-url 'tcp://localhost:10001' --multiprocessing-distributed --world-size 1 --rank 0 \
-  --fix-pred-lr \
-  --data /path/to/tinyimagenet
-```
-
-3. DINO
-
-path: /dino/
-command: 
-
-```
-python -m torch.distributed.launch --nproc_per_node=8 main_dino.py --arch vit_small --data_path /path/to/tinyimagenet/train --output_dir /path/to/saving_dir
-```
-
-4. DINO+Hier
-
-path: /dino/
-command: 
-
-```
-python -m torch.distributed.launch --nproc_per_node=8 main_dino_hier.py --arch vit_small --data_path /path/to/tinyimagenet/train --output_dir /path/to/saving_dir
-```
-
-## Linear evaluation
-
