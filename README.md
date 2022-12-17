@@ -3,6 +3,8 @@ This is a repository that implements [DINO](https://github.com/facebookresearch/
 
 ## Pretraining
 
+The dataset used for pretraining is tinyimagenet200.
+
 1. SimSiam
 
 path: /simsiam/
@@ -48,6 +50,8 @@ python -m torch.distributed.launch --nproc_per_node=8 main_dino_hier.py --arch v
 ```
 
 ## Linear evaluation
+
+I use several fine-grained classification benchmarks to evaluate the learned representation with each method.
 
 1. Simsiam, Simsiam+Hier
 
