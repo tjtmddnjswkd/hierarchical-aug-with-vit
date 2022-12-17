@@ -6,7 +6,7 @@ This is a repository that implements [DINO](https://github.com/facebookresearch/
 </p>
 
 <p align="right">
-    <img width="450" alt="ViT(DINO)+Hier" src="https://user-images.githubusercontent.com/69955858/208245659-ae098f04-08e9-41e3-a1ac-e18b8f95455d.png">
+    <img width="450" alt="ViT(DINO)+Hier" src="https://user-images.githubusercontent.com/69955858/208245813-0d9b99fc-8cb8-4b2d-a0e3-ac6b9f01a063.png">
 </p>
 
 ## Pretraining
