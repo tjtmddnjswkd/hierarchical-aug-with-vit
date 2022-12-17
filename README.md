@@ -1,5 +1,7 @@
-## DL2_project - Applying Hierarchical Augmentation to the DINO Method Using the ViT Model
+# DL2_project - Applying Hierarchical Augmentation to the DINO Method Using the ViT Model
 This is a repository that implements [DINO](https://github.com/facebookresearch/dino) to apply for ViT the [paper](https://arxiv.org/abs/2206.00227)'s components which can be applied only CNN-based model.
+
+## Framework
 
 <p align="center">
     <img width="600" alt="CNN+Hier" src="https://user-images.githubusercontent.com/69955858/208245712-846ce8be-c6b7-4fe1-af6e-2e7176cfdaf7.png">
@@ -10,6 +12,16 @@ This is a repository that implements [DINO](https://github.com/facebookresearch/
     <img width="600" alt="ViT(DINO)+Hier" src="https://user-images.githubusercontent.com/69955858/208245813-0d9b99fc-8cb8-4b2d-a0e3-ac6b9f01a063.png">
     <em>Proposed Framework</em>
 </p>
+
+## Motivation
+
+This [paper](https://arxiv.org/abs/2206.00227) argues that it is very important how to design augmentation for self-supervised learning via invariance methods.
+
+Augmentation that has a positive effect is different for each downstream, and too strong augmentation can cause loss of fine-grained information.
+
+**I think that a greater gain can be obtained by applying the components proposed by the authors to ViT, which requires strong augmentation for high performance.**
+--------------------------------------
+# Implementation
 
 ## Pretraining
 
