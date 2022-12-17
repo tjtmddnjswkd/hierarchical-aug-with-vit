@@ -2,12 +2,82 @@
 This is a repository that implements [DINO](https://github.com/facebookresearch/dino) to apply for ViT the [paper](https://arxiv.org/abs/2206.00227)'s components which can be applied only CNN-based model.
 
 ## Results
+# Top-1 Acc.
+<table>
+  <tr>
+    <th>Method</th>
+    <th>TinyImageNet</th>
+    <th>CUB</th>
+    <th>CAR</th>
+    <th>FLOWER</th>
+  </tr>
+  <tr>
+    <td>SimSiam</td>
+    <td>47.22</td>
+    <td>21.51</td>
+    <td>27.31</td>
+    <td>63.63</td>
+  </tr>
+  <tr>
+    <td>SimSiam+Hier</td>
+    <td>49.66</td>
+    <td>25.25</td>
+    <td>26.27</td>
+    <td>68.43</td>
+  </tr>
+  <tr>
+    <td>DINO</td>
+    <td>48.80</td>
+    <td>25.65</td>
+    <td>25.92</td>
+    <td>65.20</td>
+  </tr>
+  <tr>
+    <td>DINO+Hier</td>
+    <td>47.03</td>
+    <td>30.32</td>
+    <td>24.65</td>
+    <td>68.82</td>
+  </tr>
+</table>
+
+# Top-5 Acc.
 
 <table>
   <tr>
     <th>Method</th>
-    <th>Pretraining dataset</th>
-    <th colspan="2", rowspan="2">TinyImageNet</th>
+    <th>TinyImageNet</th>
+    <th>CUB</th>
+    <th>CAR</th>
+    <th>FLOWER</th>
+  </tr>
+  <tr>
+    <td>SimSiam</td>
+    <td>72.22</td>
+    <td>46.07</td>
+    <td>51.15</td>
+    <td>83.92</td>
+  </tr>
+  <tr>
+    <td>SimSiam+Hier</td>
+    <td>73.02</td>
+    <td>50.54</td>
+    <td>49.61</td>
+    <td>86.77</td>
+  </tr>
+  <tr>
+    <td>DINO</td>
+    <td>74.26</td>
+    <td>51.97</td>
+    <td>48.50</td>
+    <td>85.20</td>
+  </tr>
+  <tr>
+    <td>DINO+Hier</td>
+    <td>72.23</td>
+    <td>57.58</td>
+    <td>47.44</td>
+    <td>87.67</td>
   </tr>
 </table>
 
