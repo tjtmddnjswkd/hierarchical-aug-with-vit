@@ -1,8 +1,11 @@
 ## DL2_project - Applying Hierarchical Augmentation to the DINO Method Using the ViT Model
 This is a repository that implements [DINO](https://github.com/facebookresearch/dino) to apply for ViT the [paper](https://arxiv.org/abs/2206.00227)'s components which can be applied only CNN-based model.
 
-<p align="center">
-  <img width="100%" alt="DINO+Hier framework" src="![image](https://user-images.githubusercontent.com/69955858/208245581-c88ba957-9826-4890-a531-ed71ac28b6bc.png)">
+<p align="left">
+    <img width="400" alt="CNN+Hier" src="<img width="742" alt="image" src="https://user-images.githubusercontent.com/69955858/208245712-846ce8be-c6b7-4fe1-af6e-2e7176cfdaf7.png">">
+</p>
+<p align="right">
+    <img width="400" alt="ViT(DINO)+Hier" src="![image](https://user-images.githubusercontent.com/69955858/208245659-ae098f04-08e9-41e3-a1ac-e18b8f95455d.png)">
 </p>
 
 ## Pretraining
