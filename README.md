@@ -2,7 +2,7 @@
 This is a repository that implements [DINO](https://github.com/facebookresearch/dino) to apply for ViT the [paper](https://arxiv.org/abs/2206.00227)'s components which can be applied only CNN-based model.
 
 ## Results
-# Top-1 Acc.
+### Top-1 Acc.
 <table>
   <tr>
     <th>Method</th>
@@ -41,7 +41,7 @@ This is a repository that implements [DINO](https://github.com/facebookresearch/
   </tr>
 </table>
 
-# Top-5 Acc.
+### Top-5 Acc.
 
 <table>
   <tr>
